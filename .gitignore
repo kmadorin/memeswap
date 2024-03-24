@@ -1,21 +1,11 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# production
-/docs/dist
-
-# misc
 .DS_Store
-*.pem
+node_modules
+dist
+.env
+.env.local
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# typescript
-*.tsbuildinfo
+# Change them to your taste:
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb

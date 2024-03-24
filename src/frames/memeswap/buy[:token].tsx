@@ -1,11 +1,11 @@
 import { Button } from 'frog'
 
-import { backgroundStyles, warningStyles, titleStyles } from './styles'
-import { CustomFrameContext } from '.'
 import tokenlist from './tokenlist.json';
 
+import { selectedTokenStyle, tokenStyle, tokenListStyles} from './styles';
 
-export const buySelectTokenScreen = (c) => {
+
+export const buySelectTokenScreen = (c:any) => {
 	const { token } = c.req.param();
 
 	const tokenIndex = tokenlist.findIndex((asset) => asset.name === token);
@@ -29,11 +29,12 @@ export const buySelectTokenScreen = (c) => {
 	
   return c.res({
     image: (
-      <div style={backgroundStyles}>
-				<h2>{token}</h2>
-				<div style={{display: "flex", flexDirection: "column"}}>
-        	{tokenlist.map((asset, index) => index === tokenIndex ? <h3 key={asset.name}>{asset.name}</h3> : <span key={asset.name}>{asset.name}</span>)}
-				</div>
+      <div style={{display: "flex", flexDirection: "column"}}>
+					<ul style={tokenListStyles}>
+						{tokenlist.map((asset, index) => {
+							return (<li key={asset.name} style={index === tokenIndex ? selectedTokenStyle : tokenStyle }>{asset.name}</li>)
+						})}
+					</ul>
       </div>
     ),
     intents: [
@@ -43,7 +44,7 @@ export const buySelectTokenScreen = (c) => {
       <Button action={`/buy/${tokenlist[prevIndex].name}`}>
         Down
       </Button>,
-			<Button action={`/buy/${token}/select`}>
+			<Button action={`/buy/${token}/1`}>
 				Select
 			</Button>
     ]

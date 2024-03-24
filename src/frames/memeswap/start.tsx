@@ -1,14 +1,16 @@
 import { Button } from 'frog'
+import { startScreenStyle } from './styles'
 
-export const homeScreen = (c) => {
+export const homeScreen = (c:any) => {
   return c.res({
     image: (
-      <div>
-				<h1>Meme Swap</h1>
-				<h2>Easily trade ERC20 tokens</h2>
-				<h3>Powered by 1inch</h3>
-      </div>
-    ),
+			<div style={startScreenStyle}>
+				<h2>Meme</h2>
+				<h1>Swap</h1>
+				
+				<span>Powered by 1inch</span>
+			</div>
+		),
     intents: [
       <Button>Help</Button>,
       <Button>Website</Button>,

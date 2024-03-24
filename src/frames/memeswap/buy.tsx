@@ -2,7 +2,7 @@ import { Button } from 'frog'
 
 import tokenlist from './tokenlist.json';
 
-export const buyScreen = (c) => {
+export const buyScreen = (c:any) => {
 	return c.res({
 		image: (
 			<div>
