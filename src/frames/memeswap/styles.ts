@@ -41,10 +41,9 @@ export const tokenListStyles: Hono.CSSProperties = {
 }
 
 export const selectedTokenStyle: Hono.CSSProperties = {
-	fontWeight: "bold",
-	fontSize: "1.5em",
+	
 }
 
 export const tokenStyle: Hono.CSSProperties = {
-
+	fontSize: "40px",
 }
